@@ -139,9 +139,9 @@ svg.append("defs")
 
 //end slider part----------------------------------------------------------------------------------- 
 
-d3.csv("data/austin_weather.csv", function(error, data) { 
+d3.csv("data/data.csv", function(error, data) { 
   color.domain(d3.keys(data[0]).filter(function(key) { // Set the domain of the color ordinal scale to be all the csv headers except "date", matching a color to an issue
-    return key !== "date"; 
+    return key !== "Date"; 
   }));
 
   data.forEach(function(d) { // Make every date in the csv data a javascript date object format
@@ -155,10 +155,10 @@ d3.csv("data/austin_weather.csv", function(error, data) {
       values: data.map(function(d) { // "values": which has an array of the dates and ratings
         return {
           date: d.date, 
-          rating: +(d[name]),
+          rating: parseFloat(d[name])
           };
       }),
-      visible: (name === "TempAvgF" ? true : false) // "visible": all false except for economy which is true.
+      visible: (name === "TempAvgF" ? true : false) // "visible": all false except for TempAvgF which is true.
     };
   });
   console.log(categories);
