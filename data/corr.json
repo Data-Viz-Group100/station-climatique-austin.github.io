@@ -1,0 +1,24 @@
+{ "nodes":[{"id": "TempHighF", "group": 1},
+    {"id": "TempAvgF", "group": 1},
+    {"id": "TempLowF", "group": 1},
+    {"id": "DewPointAvgF", "group": 2},
+    {"id": "DewPointLowF", "group": 2},
+    {"id": "DewPointHighF", "group": 2},
+    {"id": "HumidityHighPercent", "group": 3},
+    {"id": "HumidityAvgPercent", "group": 3},
+    {"id": "HumidityLowPercent", "group": 3},
+    {"id": "SeaLevelPressureHighInches", "group": 4},
+    {"id": "SeaLevelPressureAvgInches", "group": 4},
+    {"id": "SeaLevelPressureLowInches", "group": 4},
+    {"id": "VisibilityAvgMiles", "group": 5},
+    {"id": "VisibilityHighMiles", "group": 5},
+    {"id": "VisibilityLowMiles", "group": 5},
+    {"id": "WindHighMPH", "group": 6},
+    {"id": "WindAvgMPH", "group": 6},
+  {"id": "WindGustMPH", "group": 6}],
+  "links":
+[{"source":"TempHighF","target":"TempAvgF","value":9.8},
+{"source":"TempAvgF","target":"TempLowF","value":9.687325215},{"source":"DewPointHighF","target":"DewPointAvgF","value":9.658900403},{"source":"DewPointAvgF","target":"DewPointLowF","value":9.664767209},{"source":"HumidityHighPercent","target":"HumidityAvgPercent","value":8.231466647},{"source":"HumidityAvgPercent","target":"HumidityLowPercent","value":9.279006167},{"source":"SeaLevelPressureHighInches","target":"SeaLevelPressureAvgInches","value":9.695813923},{"source":"SeaLevelPressureAvgInches","target":"SeaLevelPressureLowInches","value":9.712342527},{"source":"VisibilityHighMiles","target":"VisibilityAvgMiles","value":2.144875172},{"source":"VisibilityAvgMiles","target":"VisibilityLowMiles","value":8.01271343},{"source":"WindHighMPH","target":"WindAvgMPH","value":6.688520998},{"source":"WindAvgMPH","target":"WindGustMPH","value":6.869568172},
+{"source":"TempAvgF","target":"DewPointAvgF","value":8.949380178},{"source":"TempAvgF","target":"HumidityAvgPercent","value":0.332833104},{"source":"TempAvgF","target":"SeaLevelPressureAvgInches","value":-6.221455248},{"source":"TempAvgF","target":"VisibilityAvgMiles","value":2.095753318},{"source":"TempAvgF","target":"WindAvgMPH","value":0.380276408},{"source":"DewPointAvgF","target":"HumidityAvgPercent","value":4.538565737},{"source":"DewPointAvgF","target":"SeaLevelPressureAvgInches","value":-6.314341807},{"source":"DewPointAvgF","target":"VisibilityAvgMiles","value":-0.644145209},{"source":"DewPointAvgF","target":"WindAvgMPH","value":0.387957994},{"source":"HumidityAvgPercent","target":"SeaLevelPressureAvgInches","value":-1.812444518},{"source":"HumidityAvgPercent","target":"VisibilityAvgMiles","value":-5.847957835},{"source":"HumidityAvgPercent","target":"WindAvgMPH","value":-0.015600504},{"source":"SeaLevelPressureAvgInches","target":"VisibilityAvgMiles","value":0.664577607},{"source":"SeaLevelPressureAvgInches","target":"WindAvgMPH","value":-1.832222654},{"source":"VisibilityAvgMiles","target":"WindAvgMPH","value":0.219706583}
+]
+  }

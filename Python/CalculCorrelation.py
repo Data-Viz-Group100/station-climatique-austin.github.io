@@ -19,30 +19,31 @@ def upload(file):
 
 #Calculer la corrélation entre les variables
 def correlation(data):
-    colonnes = list(data.columns.drop(["Date", "PrecipitationSumInches"]))
+    colonnes = ["TempAvgF","DewPointAvgF","HumidityAvgPercent","SeaLevelPressureAvgInches","VisibilityAvgMiles","WindAvgMPH"]
     dflis = list()
     data = data[colonnes].astype(float)
     for i in range(len(colonnes)-1):
         for j in range(i+1, len(colonnes)):
             corr =  data[colonnes[i]].corr(data[colonnes[j]])
            # print(colonnes[i]+"  "+colonnes[j] +"  "+str(corr))
-            dflis.append((colonnes[i],colonnes[j] ,corr))
-    df = pd.DataFrame(dflis,  columns=["V1","V2","Corr"])
+            dflis.append((colonnes[i],colonnes[j] ,corr*10))
+    df = pd.DataFrame(dflis,  columns=["source","target","value"])
     return  df
 
 
 
 # Sauvegarder la matrice de corrélation entre les variable
-def Savedata(df, folder, file, format, sep):
-    filename = folder+"/"+file+"."+format
-    df.to_csv(filename, sep=sep, encoding='utf-8', index=False)
+def Savedata(df, folder, file):
+    filename = folder+"/"+file+".json"
+    df.to_json(filename, orient='records')
 
 ###################################################################
 #####################Appel des fonction~###########################
 ###################################################################
 data = upload("../data/austin_weather.csv")
 df = correlation(data)
-Savedata(df,"../data", "corr","csv",",")
+#print(data.columns)
+Savedata(df,"../data", "corr2")
 
 
 ################F04##############################################
