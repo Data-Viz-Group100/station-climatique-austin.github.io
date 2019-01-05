@@ -169,7 +169,7 @@ d3.json("oussama.json",
     .attr("y", chartHeight + 20)
     .attr("dy", "1.2em")
     .style("font-size", "12px")
-    .text("Temperature variance - degrees above or below average temp 65°C");
+    .text("Temperature variance - degrees above or below average temp 65ï¿½C");
  
  	const allColors = coldColors.reverse().concat(hotColors);
  	
@@ -184,13 +184,13 @@ d3.json("oussama.json",
     
    
    chart.append('text')
-   .text('50°')
+   .text('50ï¿½')
    .attr("x", -50 + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
 
    chart.append('text')
-   .text('+75°')
+   .text('+75ï¿½')
    .attr("x", 380  + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
