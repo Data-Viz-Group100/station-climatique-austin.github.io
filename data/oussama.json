@@ -1,5 +1,4 @@
-[{"year":2013,"month":12,"temperature":48.8181818182,"humidite":64.0},
-  {"year":2014,"month":1,"temperature":50.8709677419,"humidite":52.7741935484},
+[{{"year":2014,"month":1,"temperature":50.8709677419,"humidite":52.7741935484},
   {"year":2014,"month":2,"temperature":55.1785714286,"humidite":62.1785714286},
   {"year":2014,"month":3,"temperature":59.064516129,"humidite":62.7741935484},
   {"year":2014,"month":4,"temperature":69.4,"humidite":61.8333333333},
