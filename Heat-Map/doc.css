@@ -1,0 +1,62 @@
+body {
+   background-image: url("https://c2.staticflickr.com/6/5557/14209199242_e889d1822e_h.jpg"); 
+   background-size: cover;
+   background-repeat: no-repeat;
+  font-weight: bold;
+}
+#header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+#header img {
+  box-shadow: 2px 2px 10px #1252a2;
+}
+
+#graph{
+  margin-left: auto;
+  margin-right: auto;
+  width: 1024px;
+  height:800px;
+  opacity: 1;
+  font-weight: bold;
+}
+footer {
+  margin: 20px;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+.chart {
+  background-color: #fff;
+  border: 0px solid black;
+}
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+a {
+	color: skyblue;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  width: 140px;
+  height: auto;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: LimeGreen;
+  border: 0px;
+  border-radius: 6px;
+  pointer-events: none;
+}
