@@ -1,4 +1,4 @@
-
+//************************************************ BENALI Oussama********************************************
 d3.json("oussama.json", 
   	function(dataset) {
   	let xYears = []
@@ -8,9 +8,9 @@ d3.json("oussama.json",
   	});
   	console.log(xYears )
   
-  // Colour codes colder than base
+  // couleurs de basses température
   	const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
-  	// Colour codes hotter that base
+  	// Coleurs de hautes temperatures
 	const hotColors = ['#ffedba','#ffde7d','#ffb853', '#fa7433', '#eb4e33']
 	
   const monthText = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov', 'Dec']
@@ -26,7 +26,7 @@ d3.json("oussama.json",
 	 },chartWidth = totalWidth - margin.left - margin.right,
 	 chartHeight = totalHeight - margin.top - margin.bottom;
 	
-   // Axies
+   // Axes
   const yAxisScale = d3.scaleLinear()
 	 .range([25, chartHeight])
 	 .domain([0,12]);
@@ -43,12 +43,12 @@ d3.json("oussama.json",
     .tickFormat(d3.format("")); // remove any special number formats
   
 
-   // Tooltip
+   // Info-bulle
   const div = d3.select("#graph").append("div")
     .attr("class", "tooltip")
     .style("opacity",0);
   
-  // Chart and data
+  // Graphique et données
   const chart = d3.select(".chart")
     .attr("width", totalWidth)
     .attr("height", totalHeight)
@@ -104,7 +104,7 @@ d3.json("oussama.json",
 	}
 
 
-  // Bind data
+  // Relier les données
   const blocks = chart.selectAll('rect')
     .data(dataset)
     .enter()
@@ -145,7 +145,7 @@ d3.json("oussama.json",
     .call(yAxis)
    .attr("opacity", "0"); // hide the ticks so only shows the month names
 
-  // X-axis label
+  //Étiquette d'axe X
   chart.append("g")
     .append("text")
     .attr("x", totalWidth - margin.right - 220)
@@ -154,7 +154,7 @@ d3.json("oussama.json",
     .style("font-size", "14px")
     .text("Years");
 
-  // Y-axis label
+  // Étiquette d'axe Y
   chart.append("text")
     .attr("x", -90)
     .attr("y", -90)
@@ -163,7 +163,7 @@ d3.json("oussama.json",
     .style("font-size", "14px")
     .text("Month");
 
- // Key
+ // clé
   chart.append("text")
     .attr("x", 40)
     .attr("y", chartHeight + 20)
