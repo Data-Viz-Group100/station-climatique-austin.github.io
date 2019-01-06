@@ -7,7 +7,6 @@ d3.json("oussama.json",
   			xYears.push(y.year);
   	});
   	console.log(xYears )
-  
   // couleurs de basses température
   	const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
   	// Coleurs de hautes temperatures
@@ -16,13 +15,13 @@ d3.json("oussama.json",
   const monthText = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov', 'Dec']
   
 	  const baseTemp = dataset.baseTemperature;  
-	  const totalWidth = 1200, totalHeight = 640;
+	  const totalWidth = 1000, totalHeight = 450;
 	
 	 const margin = {
 	   top: 30,
-	   right: 30,
+	   right: 10,
 	   bottom: 80,
-	   left: 100
+	   left: 50
 	 },chartWidth = totalWidth - margin.left - margin.right,
 	 chartHeight = totalHeight - margin.top - margin.bottom;
 	
