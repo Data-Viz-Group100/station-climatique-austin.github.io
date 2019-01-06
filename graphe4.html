@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Issues Ratings</title>
+<title>Valeurs</title>
 <style>
 
 body {
@@ -217,7 +217,7 @@ d3.tsv("data/austin_weather.tsv", function(error, data) {
       .attr("x", -10)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Issues Rating");
+      .text("Valeurs");
 
   var issue = svg.selectAll(".issue")
       .data(categories) // Select nested data and append to new svg group elements
