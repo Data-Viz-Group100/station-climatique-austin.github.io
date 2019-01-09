@@ -90,6 +90,14 @@
                   .force("charge", d3.forceManyBody())
                   .force("center", d3.forceCenter(width / 2, height / 2));
 
+
+                function gravity(alpha) {
+                  return function(d) {
+                    d.y +=  1000;
+                    d.x += 1000;
+                  };
+                }
+
               d3.json("data/corr.json", function(error, graph) {
                 if (error) throw error;
 
@@ -125,9 +133,12 @@
                 node.append("title")
                     .text(function(d) { return d.id; });
 
+
+
                 simulation
                     .nodes(graph.nodes)
                     .on("tick", ticked);
+////
 
                 simulation.force("link")
                     .links(graph.links);
