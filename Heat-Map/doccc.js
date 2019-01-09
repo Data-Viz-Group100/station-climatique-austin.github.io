@@ -7,7 +7,7 @@ d3.json("oussama.json",
   			xYears.push(y.year);
   	});
   	console.log(xYears )
-  // couleurs de basses température
+  // couleurs de basses températures
   	const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
   	// Coleurs de hautes temperatures
 	const hotColors = ['#ffedba','#ffde7d','#ffb853', '#fa7433', '#eb4e33']
