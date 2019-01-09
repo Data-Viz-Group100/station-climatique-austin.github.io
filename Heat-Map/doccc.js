@@ -172,7 +172,7 @@ d3.json("oussama.json",
     .attr("y", chartHeight + 20)
     .attr("dy", "1.2em")
     .style("font-size", "12px")
-    .text("variance de Temperature/Humidité Moyennes  ");
+    .text("Variation de Temperature/Humidité Moyennes  ");
  
  	const allColors = coldColors.reverse().concat(hotColors);
  	
@@ -187,13 +187,13 @@ d3.json("oussama.json",
     
    
    chart.append('text')
-   .text('50°')
+   .text('+50')
    .attr("x", -50 + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
 
    chart.append('text')
-   .text('+75°')
+   .text('+75°F')
    .attr("x", 380  + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
