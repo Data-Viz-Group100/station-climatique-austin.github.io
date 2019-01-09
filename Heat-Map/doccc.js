@@ -1,4 +1,4 @@
-//************************************************ BENALI Oussama********************************************
+
 d3.json("oussama.json", 
   	function(dataset) {
   	let xYears = []
@@ -6,27 +6,29 @@ d3.json("oussama.json",
   		if (!xYears.includes(y.year)) 
   			xYears.push(y.year);
   	});
-  	xYears.push(2018)
+	//console.log(Math.max(xYears ))
+	xYears.push(2018)
   	console.log(xYears )
-  // couleurs de basses températures
+  
+  // Colour codes colder than base
   	const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
-  	// Coleurs de hautes temperatures
+  	// Colour codes hotter that base
 	const hotColors = ['#ffedba','#ffde7d','#ffb853', '#fa7433', '#eb4e33']
 	
   const monthText = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov', 'Dec']
   
 	  const baseTemp = dataset.baseTemperature;  
-	  const totalWidth = 1000, totalHeight = 450;
+	  const totalWidth = 1200, totalHeight = 640;
 	
 	 const margin = {
 	   top: 30,
-	   right: 10,
+	   right: 30,
 	   bottom: 80,
-	   left: 50
+	   left: 100
 	 },chartWidth = totalWidth - margin.left - margin.right,
 	 chartHeight = totalHeight - margin.top - margin.bottom;
 	
-   // Axes
+   // Axies
   const yAxisScale = d3.scaleLinear()
 	 .range([25, chartHeight])
 	 .domain([0,12]);
@@ -36,19 +38,20 @@ d3.json("oussama.json",
 	  
   const xAxisScale = d3.scaleLinear()
 	.domain([xYears[0],xYears[xYears.length-1]])
-   .range([0, chartWidth-30]);
+   .range([0, chartWidth]);
      
   const xAxis = d3.axisBottom(xAxisScale)
+    //.ticks(32)
     .ticks(xYears.length )
     .tickFormat(d3.format("")); // remove any special number formats
   
 
-   // Info-bulle
+   // Tooltipf
   const div = d3.select("#graph").append("div")
     .attr("class", "tooltip")
     .style("opacity",0);
   
-  // Graphique et données
+  // Chart and data
   const chart = d3.select(".chart")
     .attr("width", totalWidth)
     .attr("height", totalHeight)
@@ -104,7 +107,7 @@ d3.json("oussama.json",
 	}
 
 
-  // Relier les données
+  // Bind data
   const blocks = chart.selectAll('rect')
     .data(dataset)
     .enter()
@@ -120,7 +123,7 @@ d3.json("oussama.json",
          .style("opacity", 1.0);
        var htmlCode = d.year + '-' + monthText[d.month-1] + '<br/>' +
           'Temperature Moy: ' + (d.temperature) + '&deg;<br/>' +
-		  'Humidite Moy: ' + (d.humidite) + '<br/>' +
+		  'Humidite Moy: ' + (d.humidite)  +
           '&deg;' ;
        div.html(htmlCode)
          .style("left", (d3.event.pageX) + "px")
@@ -145,7 +148,7 @@ d3.json("oussama.json",
     .call(yAxis)
    .attr("opacity", "0"); // hide the ticks so only shows the month names
 
-  //Étiquette d'axe X
+  // X-axis label
   chart.append("g")
     .append("text")
     .attr("x", totalWidth - margin.right - 220)
@@ -154,7 +157,7 @@ d3.json("oussama.json",
     .style("font-size", "14px")
     .text("Years");
 
-  // Étiquette d'axe Y
+  // Y-axis label
   chart.append("text")
     .attr("x", -90)
     .attr("y", -90)
@@ -163,13 +166,13 @@ d3.json("oussama.json",
     .style("font-size", "14px")
     .text("Month");
 
- // clé
+ // Key
   chart.append("text")
     .attr("x", 40)
     .attr("y", chartHeight + 20)
     .attr("dy", "1.2em")
     .style("font-size", "12px")
-    .text("Temperature variance - degrees above or below average temp 65�C");
+    .text("Temperature variance - degrees above or below average temp 65°C");
  
  	const allColors = coldColors.reverse().concat(hotColors);
  	
@@ -184,13 +187,13 @@ d3.json("oussama.json",
     
    
    chart.append('text')
-   .text('50�')
+   .text('50°')
    .attr("x", -50 + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
 
    chart.append('text')
-   .text('+75�')
+   .text('+75°')
    .attr("x", 380  + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
