@@ -6,6 +6,7 @@ d3.json("oussama.json",
   		if (!xYears.includes(y.year)) 
   			xYears.push(y.year);
   	});
+  	xYears.push(2018)
   	console.log(xYears )
   // couleurs de basses températures
   	const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
@@ -38,7 +39,7 @@ d3.json("oussama.json",
    .range([0, chartWidth-30]);
      
   const xAxis = d3.axisBottom(xAxisScale)
-    .ticks(32)
+    .ticks(xYears.length )
     .tickFormat(d3.format("")); // remove any special number formats
   
 
@@ -108,7 +109,7 @@ d3.json("oussama.json",
     .data(dataset)
     .enter()
     .append('rect')
-    .attr('width', Math.ceil(chartWidth / 3))
+    .attr('width', Math.ceil(chartWidth / 4))
     .attr('height', (chartHeight - (margin.top - 15) * 1.8)/12)
     .attr('x', (d) => xAxisScale(d.year))
     .attr('y', (d) => yAxisScale(d.month - 1))
