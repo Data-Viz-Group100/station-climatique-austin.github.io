@@ -74,7 +74,7 @@
 
     var corXscale = d3.scaleBand().rangeRound([0,w]),
         corYscale = d3.scaleBand().rangeRound([h,0]),
-  	corColScale =d3.scaleLinear().domain([-1,0,1]).range(['crimson','white','slateblue']);
+  	corColScale =d3.scaleLinear().domain([-1,0,1]).range(['crimson','yellow','green']);
     var corRscale = d3.scaleSqrt().domain([0,1]);
 
     d3.json('data/data.json', function(err, data) {
@@ -202,9 +202,9 @@
                                 .attr('class', 'point')
                                     .attr('cx', function(d) {return xScale(data.dat[col][d]);})
                                     .attr('cy', function(d) { return yScale(data.dat[row][d]); })
-                                    .attr('r', 2)
+                                    .attr('r', 4)
                                     .attr('stroke', 'none')
-                                    .attr('fill', 'black');
+                                    .attr('fill', 'blue');
 
                             scatterplot.append('g')
                                 .attr('class', 'x axis')
