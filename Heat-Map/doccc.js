@@ -172,7 +172,7 @@ d3.json("oussama.json",
     .attr("y", chartHeight + 20)
     .attr("dy", "1.2em")
     .style("font-size", "12px")
-    .text("Temperature variance - degrees above or below average temp 65°C");
+    .text("variance de Temperature/Humidité Moyennes  ");
  
  	const allColors = coldColors.reverse().concat(hotColors);
  	
