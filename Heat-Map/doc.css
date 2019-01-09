@@ -19,8 +19,8 @@ body {
 #graph{
   margin-left: auto;
   margin-right: auto;
-  width: 1024px;
-  height:800px;
+  width: 1000px;
+  height:600px;
   opacity: 1;
   font-weight: bold;
 }
