@@ -124,7 +124,7 @@ d3.json("oussama.json",
        var htmlCode = d.year + '-' + monthText[d.month-1] + '<br/>' +
           'Temperature Moy: ' + (d.temperature) + '&deg;<br/>' +
 		  'Humidite Moy: ' + (d.humidite)  +
-          '&deg;' ;
+          '%;' ;
        div.html(htmlCode)
          .style("left", (d3.event.pageX) + "px")
          .style("top", (d3.event.pageY - 28) + "px");
