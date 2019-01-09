@@ -187,7 +187,7 @@ d3.json("oussama.json",
     
    
    chart.append('text')
-   .text('+50°F')
+   .text('+50')
    .attr("x", -50 + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
