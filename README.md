@@ -11,7 +11,7 @@ Présentation des températures ainsi que l’humidité moyennes pour chaque moi
 Une nuance de couleur des plus froides au plus chaudes.<br/>
 Une tendance légère à la hausse de la température moyenne entre 2014 et 2017 (effet de serre ).<br/>
 Ce graphe peut donc servir à avoir une idée sur les conditions climatiques notamment pour les biologistes et agriculteurs ou eventuelement les touristes de la ville de Texas.
-[![Time series](css/time-serie.png "Heat Map")](css/time-serie.png  "Heat Map")
+[![Time series](css/map.png "Heat Map")](css/map.png  "Heat Map")
 ## Graphe 3: Graphe de corrélation entre les variables:
 Ce graphe nous donne une vision globale sur les corrélations entre les variables. 
 Les noeuds représentent les différentes variables du dataSet et les liens les corrélations entres eux.
