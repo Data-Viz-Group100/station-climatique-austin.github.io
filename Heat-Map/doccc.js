@@ -11,11 +11,11 @@ d3.json("oussama.json",
   	console.log(xYears )
   
   // Colour codes colder than base
-  	const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
+  	//const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
   	// Colour codes hotter that base
-	const hotColors = ['#ffedba','#ffde7d','#ffb853', '#fa7433', '#eb4e33']
+	const hotColors = [' #fcf3cf ','#f9e79f ','#f7dc6f ','#f8c471 ', '#f5b041', '#eb984e','#e67e22','#ca6f1e','#ba4a00','#a04000',' #873600','#6e2c00',' #561a13',' #31110e ']
 	
-  const monthText = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov', 'Dec']
+  const monthText = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre','Novembre', 'Décembre']
   
 	  const baseTemp = dataset.baseTemperature;  
 	  const totalWidth = 1200, totalHeight = 640;
@@ -87,21 +87,23 @@ d3.json("oussama.json",
 
 	function varianceColour(d) {
 		if (d.temperature >= 0) {
-			if ( d.temperature > 50 &&  d.temperature < 55 ) return coldColors[4];
-			if ( d.temperature > 55 &&  d.temperature < 60) return coldColors[3];
-			if ( d.temperature > 60 &&  d.temperature < 68) return coldColors[2];
-			if ( d.temperature > 68 &&  d.temperature < 70) return coldColors[1];
-			if ( d.temperature > 70 &&  d.temperature < 73 ) return hotColors[4];
-			if ( d.temperature > 73 &&  d.temperature < 75) return hotColors[3];
-			if ( d.temperature > 75 &&  d.temperature < 85) return hotColors[2];
-			if ( d.temperature > 85 &&  d.temperature < 90) return hotColors[1];
-			if (d.temperature >= 0) return hotColors[0];
-		} else {
-			if (d.temperature < -4) return coldColors[4];
-			if (d.temperature < -3) return coldColors[3];
-			if (d.temperature < -2) return coldColors[2];
-			if (d.temperature < -1) return coldColors[1];
-			if (d.temperature < 0) return coldColors[0];
+			if ( d.temperature >= 30 &&  d.temperature < 50 ) return hotColors[0];
+			if ( d.temperature >= 50 &&  d.temperature < 53 ) return hotColors[1];
+			if ( d.temperature >= 53 &&  d.temperature < 56) return hotColors[2];
+			if ( d.temperature >= 56 &&  d.temperature < 59) return hotColors[3];
+			if ( d.temperature >= 59 &&  d.temperature < 62) return hotColors[4];
+			if ( d.temperature >= 62 &&  d.temperature < 65 ) return hotColors[5];
+			if ( d.temperature >= 65 &&  d.temperature < 68) return hotColors[6];
+			if ( d.temperature >= 68 &&  d.temperature < 71) return hotColors[7];
+			if ( d.temperature >= 71 &&  d.temperature < 75) return hotColors[8];
+			if ( d.temperature >= 75 &&  d.temperature < 77) return hotColors[9];
+			if ( d.temperature >= 77 &&  d.temperature < 80) return hotColors[10];
+			if ( d.temperature >= 80 &&  d.temperature < 82.8) return hotColors[11];
+			if ( d.temperature >= 82.8 &&  d.temperature < 86) return hotColors[12];
+			if ( d.temperature >= 86 &&  d.temperature < 90) return hotColors[13];
+			
+			
+			
 		}
 		return '#fff';  
 	}
@@ -122,9 +124,8 @@ d3.json("oussama.json",
          .duration(100)
          .style("opacity", 1.0);
        var htmlCode = d.year + '-' + monthText[d.month-1] + '<br/>' +
-          'Temperature Moy: ' + (d.temperature) + '&deg;<br/>' +
-		  'Humidite Moy: ' + (d.humidite)  +
-          '%;' ;
+          'Temperature Moy: ' + (d.temperature) + '°F<br/>' 
+		  ;
        div.html(htmlCode)
          .style("left", (d3.event.pageX) + "px")
          .style("top", (d3.event.pageY - 28) + "px");
@@ -155,7 +156,7 @@ d3.json("oussama.json",
     .attr("y", totalHeight - margin.bottom)
     .attr("dy", "1.2em")
     .style("font-size", "14px")
-    .text("Years");
+    .text("Années");
 
   // Y-axis label
   chart.append("text")
@@ -164,7 +165,7 @@ d3.json("oussama.json",
     .attr("dy", "1.2em")
     .attr('transform', 'rotate(-90)')
     .style("font-size", "14px")
-    .text("Month");
+ 
 
  // Key
   chart.append("text")
@@ -172,29 +173,29 @@ d3.json("oussama.json",
     .attr("y", chartHeight + 20)
     .attr("dy", "1.2em")
     .style("font-size", "12px")
-    .text("Variation de Temperature/Humidité Moyennes  ");
+    .text("Variation de la temperature moyenne en Fahrenheit");
  
- 	const allColors = coldColors.reverse().concat(hotColors);
+ 	//const allColors = coldColors.reverse().concat(hotColors);
  	
  const keys = chart.selectAll("circle")
-    .data(allColors)
+    .data(hotColors)
     .enter()
     .append("circle")
     .attr('r', 15)
     .attr('cx', (d,i) => (i * 40) + margin.left)
     .attr('cy', totalHeight - 50)
-    .style('fill', (d,i) => allColors[i]);
+    .style('fill', (d,i) => hotColors[i]);
     
    
    chart.append('text')
-   .text('+50')
+   .text('48°F')
    .attr("x", -50 + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
 
    chart.append('text')
-   .text('+75°F')
-   .attr("x", 380  + margin.left)
+   .text('+90°F')
+   .attr("x", 540  + margin.left)
     .attr("y", totalHeight - 50)
     .attr("dy", ".3em")
         
