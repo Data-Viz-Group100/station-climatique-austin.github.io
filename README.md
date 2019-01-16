@@ -17,7 +17,7 @@ Ce graphe nous donne une vision globale sur les corrélations entre les variable
 Les noeuds représentent les différentes variables du dataSet et les liens les corrélations entres eux.
 Plus le lien entre deux variables est opaque, plus les variables sont corrélées.
 [![Time series](css/correlation.png "Corrélation des variables")](css/correlation.png  "Corrélation des variables")
-## Graphe 4: Matrice de corrélation et Paire plot:
+## Graphe 4: Matrice de corrélation:
 Cette matrice de corrélation montre de façon détaillée les corrélations entre les variable.
 Un nœud représente une corrélation entre deux variables.
 Plus le noeud est vert plus les variables sont corrélées.
