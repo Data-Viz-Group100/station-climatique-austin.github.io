@@ -7,9 +7,9 @@ Ce graphe nous intéresse beaucoup car c’est très pratique de voir des prévi
 ## Graphe 2: Carte de Chaleur/Humidité (HEAT MAP)
 Calcul des moyennes mensuelles de température et humidité
 
-Présentation des températures ainsi que l’humidité moyennes pour chaque mois (Températures en Fahrenheit )
-Une nuance de couleur des plus froides au plus chaudes.
-Une tendance légère à la hausse de la température moyenne entre 2014 et 2017 (effet de serre )
+Présentation des températures ainsi que l’humidité moyennes pour chaque mois (Températures en Fahrenheit )<br/>
+Une nuance de couleur des plus froides au plus chaudes.<br/>
+Une tendance légère à la hausse de la température moyenne entre 2014 et 2017 (effet de serre ).<br/>
 Ce graphe peut donc servir à avoir une idée sur les conditions climatiques notamment pour les biologistes et agriculteurs ou eventuelement les touristes de la ville de Texas.
 [![Time series](css/time-serie.png "Heat Map")](css/time-serie.png  "Heat Map")
 ## Graphe 3: Graphe de corrélation entre les variables:
@@ -18,10 +18,11 @@ Les noeuds représentent les différentes variables du dataSet et les liens les 
 Plus le lien entre deux variables est opaque, plus les variables sont corrélées.
 [![Time series](css/correlation.png "Corrélation des variables")](css/correlation.png  "Corrélation des variables")
 ## Graphe 4: Matrice de corrélation et Paire plot:
-Cette matrice de corrélation montre de façon détaillée les corrélations entre les variable.
-Un nœud représente une corrélation entre deux variables.
-Plus le noeud est vert plus les variables sont corrélées.
-Plus le noeud est rouge moins les variables sont corrélées.
-Positionnez la souris sur un nœud pour voir la valeur de la corrélation. Cliquez sur le nœud pour visualiser le « Pair plots ». 
+Cette matrice de corrélation montre de façon détaillée les corrélations entre les variable.<br/>
+Un nœud représente une corrélation entre deux variables.<br/>
+Plus le noeud est vert plus les variables sont corrélées.<br/>
+Plus le noeud est rouge moins les variables sont corrélées.<br/>
+Positionnez la souris sur un nœud pour voir la valeur de la corrélation. <br/>
+Cliquez sur le nœud pour visualiser le « Pair plots ».<br/>
 Le « Pair plots » permet de la voir la relation entre deux variables. 
 [![Time series](css/pair-plot.png "Corrélation et Paire plot")](css/pair-plot.png  "Corrélation et Paire plot")
