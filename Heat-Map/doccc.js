@@ -10,9 +10,8 @@ d3.json("oussama.json",
 	xYears.push(2018)
   	console.log(xYears )
   
-  // Colour codes colder than base
-  	//const coldColors = ['#dee2ed', '#afb8d3', '#7f8db8', '#6778aa', '#4f639d']
-  	// Colour codes hotter that base
+  
+ 
 	const hotColors = [' #fcf3cf ','#f9e79f ','#f7dc6f ','#f8c471 ', '#f5b041', '#eb984e','#e67e22','#ca6f1e','#ba4a00','#a04000',' #873600','#6e2c00',' #561a13',' #31110e ']
 	
   const monthText = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre','Novembre', 'Décembre']
@@ -28,7 +27,7 @@ d3.json("oussama.json",
 	 },chartWidth = totalWidth - margin.left - margin.right,
 	 chartHeight = totalHeight - margin.top - margin.bottom;
 	
-   // Axies
+   // Axes
   const yAxisScale = d3.scaleLinear()
 	 .range([25, chartHeight])
 	 .domain([0,12]);
@@ -46,12 +45,12 @@ d3.json("oussama.json",
     .tickFormat(d3.format("")); // remove any special number formats
   
 
-   // Tooltipf
+
   const div = d3.select("#graph").append("div")
     .attr("class", "tooltip")
     .style("opacity",0);
   
-  // Chart and data
+  
   const chart = d3.select(".chart")
     .attr("width", totalWidth)
     .attr("height", totalHeight)
@@ -109,7 +108,7 @@ d3.json("oussama.json",
 	}
 
 
-  // Bind data
+  // Relier les données
   const blocks = chart.selectAll('rect')
     .data(dataset)
     .enter()
@@ -149,7 +148,7 @@ d3.json("oussama.json",
     .call(yAxis)
    .attr("opacity", "0"); // hide the ticks so only shows the month names
 
-  // X-axis label
+  // Étiquette d'axe X
   chart.append("g")
     .append("text")
     .attr("x", totalWidth - margin.right - 220)
@@ -158,7 +157,7 @@ d3.json("oussama.json",
     .style("font-size", "14px")
     .text("Années");
 
-  // Y-axis label
+  // Étiquette d'axe Y
   chart.append("text")
     .attr("x", -90)
     .attr("y", -90)
@@ -167,7 +166,7 @@ d3.json("oussama.json",
     .style("font-size", "14px")
  
 
- // Key
+ /// Clé
   chart.append("text")
     .attr("x", 40)
     .attr("y", chartHeight + 20)
@@ -175,7 +174,7 @@ d3.json("oussama.json",
     .style("font-size", "12px")
     .text("Variation de la temperature moyenne en Fahrenheit");
  
- 	//const allColors = coldColors.reverse().concat(hotColors);
+ 	
  	
  const keys = chart.selectAll("circle")
     .data(hotColors)
