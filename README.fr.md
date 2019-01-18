@@ -1,8 +1,6 @@
 # Données météorologiques quotidiennes pour la station Austin (TEXAS):
 Nous avons des données relatives au climat de la ville d’Austin (Capital de l’État de Texas), ces données sont : la température, l’humidité, le niveau de mer, vitesse du vent, ainsi que la visibilité (le degré de brouillard). Nous avons différents statistiques (moyenne, valeurs: Max, Min ). Le besoin pour lequel on compte répondre c’est voir comment ces grandeurs climatiques sont-elle corrélées, faire une régression/un forecasting pour voir comment ces mesures évoluent dans le temps, voir la saisonnalité, la cyclicité ainsi que l’auto-corrélation des observation pour chaque mesure.
-
-*Read this in french: [FRENCH](README.fr.md)
-
+*Lire ça en anglais: [English](README.md)
 Pour se faire, nous avons implémenté 4 graphes qui sont: 
 ## Graphe 1: Série Temporelle
 Ce graphe nous intéresse beaucoup car c’est très pratique de voir des prévisions avec une intervalle de confiance qui rassure l’utilisateur. Il permet aussi de visualiser l’évolution de la température, afin de permettre à la population d’avoir une vue globale sur les données météorologiques.
