@@ -218,8 +218,39 @@ d3.tsv("data/austin_weather.tsv", function(error, data) {
   // draw legend
   var legendSpace = 450 / categories.length; // 450/number of issues (ex. 40)
   issue.append("rect")
-      .attr("width", 10)
-      .attr("height", 10)
+      .attr("width", function(d){
+        if(d.name == "TempHighF" || d.name == "TempLowF" ||  d.name == "DewPointHighF" || d.name =="DewPointLowF"
+|| d.name == "HumidityHighPercent" || d.name == "HumidityLowPercent" ||  d.name == "SeaLevelPressureHighInches"
+|| d.name =="SeaLevelPressureLowInches" ||  d.name == "VisibilityHighMiles"
+|| d.name =="VisibilityLowMiles" || d.name == "WindHighMPH"
+|| d.name =="WindGustMPH" )
+{
+
+  return 0.0000001
+}
+else{
+  return 10
+}
+
+      })
+      .attr("height", function(d){
+        if(d.name == "TempHighF" || d.name == "TempLowF" ||  d.name == "DewPointHighF" || d.name =="DewPointLowF"
+|| d.name == "HumidityHighPercent" || d.name == "HumidityLowPercent" ||  d.name == "SeaLevelPressureHighInches"
+|| d.name =="SeaLevelPressureLowInches" ||  d.name == "VisibilityHighMiles"
+|| d.name =="VisibilityLowMiles" || d.name == "WindHighMPH"
+|| d.name =="WindGustMPH" )
+{
+
+  return 0.0000001
+}
+else{
+  return 10
+}
+
+
+
+
+      })
       .attr("x", width + (margin.right/3) - 15)
       .attr("y", function (d, i) { return (legendSpace)+i*(legendSpace) - 8; })  // spacing
       .attr("fill",function(d) {
@@ -313,7 +344,41 @@ d3.tsv("data/austin_weather.tsv", function(error, data) {
   issue.append("text")
       .attr("x", width + (margin.right/3))
       .attr("y", function (d, i) { return (legendSpace)+i*(legendSpace); })  // (return (11.25/2 =) 5.625) + i * (5.625)
-      .text(function(d) { return d.name; });
+      .text(function(d) {
+
+        if (d.name == "TempHighF" || d.name == "TempLowF" ||  d.name == "DewPointHighF" || d.name =="DewPointLowF"
+|| d.name == "HumidityHighPercent" || d.name == "HumidityLowPercent" ||  d.name == "SeaLevelPressureHighInches"
+|| d.name =="SeaLevelPressureLowInches" ||  d.name == "VisibilityHighMiles"
+|| d.name =="VisibilityLowMiles" || d.name == "WindHighMPH"
+|| d.name =="WindGustMPH"){return "";}
+
+
+        if(d.name=="TempAvgF"){return "Temperature (°F)"}
+          if(d.name=="DewPointAvgF"){return "Rosée (°F)" }
+            if(d.name=="HumidityAvgPercent"){return "Humidité (%)"}
+              if(d.name=="SeaLevelPressureAvgInches"){return "Pression mer(Inches)"}
+                if(d.name=="VisibilityAvgMiles"){return "Visibilité (Miles)"}
+                  if(d.name=="WindAvgMPH"){return "Vitesse du vent (Miles/Heure)"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        return d.name; });
 
 
 
